@@ -157,9 +157,14 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   color: #f8fbff;
-  background: rgba(255, 255, 255, 0.08);
+  background-color: #15171c;
   outline: none;
   cursor: pointer;
+}
+
+.item-picker select option {
+  color: #f8fbff;
+  background-color: #15171c;
 }
 
 .item-picker select:focus {
