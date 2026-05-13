@@ -1,0 +1,257 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #f5f7fb;
+  background: #0a0a0d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 48px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(24, 96, 111, 0.32), transparent 28%),
+    radial-gradient(circle at 78% 72%, rgba(171, 48, 70, 0.24), transparent 30%),
+    linear-gradient(135deg, #09090c 0%, #15171c 48%, #08090b 100%);
+}
+
+.kuro-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 5vw, 64px);
+  background: #020204;
+}
+
+.kuro-icon-button {
+  width: min(84vmin, 720px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.kuro-icon-button:focus-visible {
+  outline: 3px solid #73d2de;
+  outline-offset: 8px;
+}
+
+.kuro-image {
+  width: min(84vmin, 720px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  opacity: 1;
+  transition: opacity 4.5s ease;
+}
+
+.kuro-image.is-fading {
+  opacity: 0;
+}
+
+.kuro-prompt {
+  position: absolute;
+  inset: auto auto clamp(24px, 6vh, 64px) auto;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(0.92rem, 2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 0.62;
+  text-align: center;
+}
+
+.kuro-prompt.is-needed {
+  opacity: 1;
+}
+
+.controls-stage {
+  width: min(1100px, 100%);
+  min-height: calc(100vh - clamp(36px, 8vw, 96px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vh, 30px);
+  opacity: 0.42;
+  pointer-events: none;
+  transform: scale(0.98);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.controls-stage.is-enabled {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.item-picker {
+  width: min(420px, 100%);
+  display: grid;
+  gap: 8px;
+  color: rgba(245, 247, 251, 0.72);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item-picker select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 42px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #f8fbff;
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  cursor: pointer;
+}
+
+.item-picker select:focus {
+  border-color: #73d2de;
+  box-shadow: 0 0 0 4px rgba(115, 210, 222, 0.16);
+}
+
+.game-display {
+  position: relative;
+  width: min(92vw, 1100px);
+  height: min(62vh, 680px);
+  display: grid;
+  place-items: center;
+}
+
+.logo-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  transition: opacity 250ms ease;
+}
+
+.logo-wrap.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-image {
+  width: min(60%, 540px);
+  max-height: 38vh;
+  object-fit: contain;
+  transform-origin: center;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.38));
+  will-change: transform;
+}
+
+.logo-image.is-animating {
+  animation: logo-spin-fade 6s ease-in forwards;
+}
+
+.game-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.game-frame.is-revealing {
+  animation: frame-reveal 6s linear forwards;
+}
+
+@keyframes logo-spin-fade {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  28% {
+    opacity: 1;
+    transform: rotate(80deg);
+  }
+
+  66.666% {
+    opacity: 1;
+    transform: rotate(520deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(900deg);
+  }
+}
+
+@keyframes frame-reveal {
+  0%,
+  66.666% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    align-items: center;
+  }
+
+  .logo-wrap {
+    width: 100%;
+  }
+
+  .game-frame {
+    height: 100%;
+  }
+
+  .game-display {
+    height: 58vh;
+  }
+
+  .logo-image {
+    width: min(80%, 420px);
+  }
+}
