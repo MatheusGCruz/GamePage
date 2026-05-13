@@ -145,6 +145,7 @@ select {
   display: grid;
   gap: 8px;
   color: rgba(245, 247, 251, 0.72);
+  background: rgba(255, 255, 255, 0.08);
   font-size: 0.86rem;
   font-weight: 700;
   text-transform: uppercase;
