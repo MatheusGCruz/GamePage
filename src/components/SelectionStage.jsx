@@ -23,6 +23,11 @@ const items = [
     label: 'Galaxy Tetris',
     url: 'https://galaxytetris.antares.ninja',
   },
+    {
+    id: 'trigger-training',
+    label: 'Trigger Training',
+    url: 'https://triggertraining.antares.ninja',
+  },
 ];
 
 function SelectionStage({ enabled }) {

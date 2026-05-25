@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .header {
+            background-color: #4285f4;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            width: 100px;
+            margin-right: 2rem;
+        }
+        .search-container {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 50%;
+            max-width: 500px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+        }
+        .search-button {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #4285f4;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" class="logo">
+        </div>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search Google or type a URL">
+        <button class="search-button">Google Search</button>
+    </div>
+    <div class="footer">
+        <p>Google</p>
+    </div>
+</body>
+</html>
