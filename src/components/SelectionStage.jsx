@@ -18,6 +18,11 @@ const items = [
     label: 'MM Checkers',
     url: 'https://checkers.antares.ninja',
   },
+  {
+    id: 'galaxy-tetris',
+    label: 'Galaxy Tetris',
+    url: 'https://galaxytetris.antares.ninja',
+  },
 ];
 
 function SelectionStage({ enabled }) {
